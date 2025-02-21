@@ -43,7 +43,7 @@ transform = transforms.Compose([
 ])
 
 # Load CIFAR-100 dataset
-testset = datasets.CIFAR100(root='/home/shuwen/data/', train=False, download=False, transform=transform)
+testset = datasets.CIFAR100(root='./data/', train=False, download=False, transform=transform)
 testloader = torch.utils.data.DataLoader(testset, batch_size=128, shuffle=False, num_workers=8)
 
 # Load the model
