@@ -40,10 +40,24 @@ checkpoint_path = "path/to/checkpoint.pth.tar"
 Replace "path/to/checkpoint.pth.tar" with the actual path to:
 CIFAR-100_arch_CIFAR_ResNet18_cross_entropy/CIFAR_ResNet18_best.pth.tar
 
-## Run the Code
+### 3）Run the Code
 
 To run the code, simply execute the following command:
 
 ``` python
-python main.py
+python main.py 
+```
+
+## Reproduce the results on TinyImageNet
+
+![architecture](imgs/img3.png)
+
+### 1）Prepare the Tiny ImageNet dataset
+
+Run the command `python dataloader/tiny_imagenet.py`. By default, Tiny ImageNet will be saved to the directory `./tiny-imagenet`.
+
+### 2）Runing MASD
+
+``` python
+python train.py --gpu 0 --dataset TinyImageNet --data ./tiny-imagenet/ --arch CIFAR_ResNet18_masd --method MASD --batch-size 128 --weight-decay 1e-4
 ```
